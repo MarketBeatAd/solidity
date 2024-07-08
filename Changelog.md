@@ -7,6 +7,7 @@ Language Features:
 
 
 Compiler Features:
+ * Code Generator: Transient storage value type state variables are now supported by the legacy pipeline.
  * Command Line Interface: Do not perform IR optimization when only unoptimized IR is requested.
  * Commandline Interface: Add ``--transient-storage-layout`` output.
  * Constant Optimizer: Uses ``PUSH0`` if supported by the selected evm version.

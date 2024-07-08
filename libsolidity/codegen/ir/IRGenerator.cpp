@@ -110,7 +110,7 @@ std::string IRGenerator::generate(
 
 	solUnimplementedAssert(
 		ranges::all_of(_contract.stateVariables(), notTransient),
-		"Transient storage variables are not supported."
+		"Transient storage variables are not supported in via IR codegen."
 	);
 
 	auto subObjectSources = [&_otherYulSources](UniqueVector<ContractDefinition const*> const& _subObjects) -> std::string
