@@ -18,6 +18,7 @@ Compiler Features:
  * SMTChecker: Replace CVC4 as a possible BMC backend with cvc5.
  * Standard JSON Interface: Do not perform IR optimization when only unoptimized IR is requested.
  * Standard JSON Interface: Add ``transientStorageLayout`` output.
+ * Yul Optimizer: Caching of optimized IR to speed up optimization of contracts with bytecode dependencies.
  * Yul Optimizer: The optimizer now treats some previously unrecognized identical literals as identical.
  * Commandline Interface: Allow the use of ``--asm-json`` output option in assembler mode to export EVM assembly of the contracts in JSON format.
 
