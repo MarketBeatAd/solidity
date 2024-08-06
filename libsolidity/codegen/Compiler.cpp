@@ -37,6 +37,18 @@ void Compiler::compileContract(
 	bytes const& _metadata
 )
 {
+	auto static notTransientReferenceType = [](VariableDeclaration const* _varDeclaration) {
+		solAssert(_varDeclaration);
+		return
+			_varDeclaration->referenceLocation() != VariableDeclaration::Location::Transient ||
+			!_varDeclaration->hasReferenceOrMappingType();
+	};
+
+	solUnimplementedAssert(
+		ranges::all_of(_contract.stateVariables(), notTransientReferenceType),
+		"Transient storage reference type variables are not supported."
+	);
+
 	ContractCompiler runtimeCompiler(nullptr, m_runtimeContext, m_optimiserSettings);
 	runtimeCompiler.compileContract(_contract, _otherCompilers);
 	m_runtimeContext.appendToAuxiliaryData(_metadata);

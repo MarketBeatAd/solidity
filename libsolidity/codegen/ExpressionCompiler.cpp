@@ -39,6 +39,8 @@
 #include <libsolutil/Whiskers.h>
 #include <libsolutil/StackTooDeepString.h>
 
+#include <libsolidity/codegen/GenericStorageItem.cpp>
+
 #include <boost/algorithm/string/replace.hpp>
 #include <numeric>
 #include <utility>

@@ -33,6 +33,8 @@
 #include <libsolutil/Whiskers.h>
 #include <libsolutil/StackTooDeepString.h>
 
+#include <libsolidity/codegen/GenericStorageItem.cpp>
+
 using namespace solidity;
 using namespace solidity::evmasm;
 using namespace solidity::frontend;

@@ -36,6 +36,8 @@
 #include <libevmasm/Instruction.h>
 #include <liblangutil/Exceptions.h>
 
+#include <libsolidity/codegen/GenericStorageItem.cpp>
+
 using namespace solidity;
 using namespace solidity::evmasm;
 using namespace solidity::frontend;
