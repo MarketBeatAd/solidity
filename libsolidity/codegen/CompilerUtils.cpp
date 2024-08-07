@@ -33,8 +33,6 @@
 #include <libsolutil/Whiskers.h>
 #include <libsolutil/StackTooDeepString.h>
 
-#include <libsolidity/codegen/GenericStorageItem.cpp>
-
 using namespace solidity;
 using namespace solidity::evmasm;
 using namespace solidity::frontend;
@@ -43,6 +41,9 @@ using namespace solidity::langutil;
 using solidity::util::Whiskers;
 using solidity::util::h256;
 using solidity::toCompactHexWithPrefix;
+
+extern template class solidity::frontend::GenericStorageItem<false>; // StorageItem
+extern template class solidity::frontend::GenericStorageItem<true>; // TransientStorageItem
 
 unsigned const CompilerUtils::dataStartOffset = 4;
 size_t const CompilerUtils::freeMemoryPointer = 64;

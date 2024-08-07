@@ -177,6 +177,10 @@ private:
 	static constexpr solidity::evmasm::Instruction m_storeInstruction = isTransient ? solidity::evmasm::Instruction::TSTORE : solidity::evmasm::Instruction::SSTORE;
 	static constexpr solidity::evmasm::Instruction m_loadInstruction = isTransient ? solidity::evmasm::Instruction::TLOAD : solidity::evmasm::Instruction::SLOAD;
 };
+template class GenericStorageItem<false>;
+template class GenericStorageItem<true>;
+using StorageItem = GenericStorageItem<false>;
+using TransientStorageItem = GenericStorageItem<true>;
 
 /**
  * Reference to a single byte inside a storage byte array.

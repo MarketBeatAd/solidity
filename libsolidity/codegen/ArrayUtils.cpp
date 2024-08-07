@@ -36,12 +36,13 @@
 #include <libevmasm/Instruction.h>
 #include <liblangutil/Exceptions.h>
 
-#include <libsolidity/codegen/GenericStorageItem.cpp>
-
 using namespace solidity;
 using namespace solidity::evmasm;
 using namespace solidity::frontend;
 using namespace solidity::langutil;
+
+extern template class solidity::frontend::GenericStorageItem<false>; // StorageItem
+extern template class solidity::frontend::GenericStorageItem<true>; // TransientStorageItem
 
 void ArrayUtils::copyArrayToStorage(ArrayType const& _targetType, ArrayType const& _sourceType) const
 {

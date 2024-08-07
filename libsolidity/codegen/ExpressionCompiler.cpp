@@ -39,8 +39,6 @@
 #include <libsolutil/Whiskers.h>
 #include <libsolutil/StackTooDeepString.h>
 
-#include <libsolidity/codegen/GenericStorageItem.cpp>
-
 #include <boost/algorithm/string/replace.hpp>
 #include <numeric>
 #include <utility>
@@ -50,6 +48,9 @@ using namespace solidity::evmasm;
 using namespace solidity::frontend;
 using namespace solidity::langutil;
 using namespace solidity::util;
+
+extern template class solidity::frontend::GenericStorageItem<false>; // StorageItem
+extern template class solidity::frontend::GenericStorageItem<true>; // TransientStorageItem
 
 namespace
 {
