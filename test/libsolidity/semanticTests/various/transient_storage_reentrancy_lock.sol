@@ -1,5 +1,8 @@
 contract C {
-    bool transient locked = false;
+    bool transient locked;
+    constructor() {
+        locked = false;
+    }
     mapping (address=>bool) registered;
     modifier nonReentrant {
         require(!locked);
@@ -25,5 +28,5 @@ contract C {
 // EVMVersion: >=cancun
 // compileViaYul: false
 // ----
-// test(address, bool): 0x1234abcd, true -> FAILURE
-// test(address, bool): 0x1234abcd, false ->
+// test(address,bool): 0x1234abcd, true ->
+// test(address,bool): 0x1234abcd, false -> FAILURE
