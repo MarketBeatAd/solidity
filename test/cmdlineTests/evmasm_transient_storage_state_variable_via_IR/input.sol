@@ -2,7 +2,7 @@
 pragma solidity >=0.0.0;
 
 contract C {
-    uint transient x = 42;
+    uint transient x;
     function f() public {
         x = x + 1;
     }
